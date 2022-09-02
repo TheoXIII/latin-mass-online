@@ -2,7 +2,7 @@
 
 Currently very much a WIP as no styling has been added yet.
 
-Missal explorer available at: /mass
+Missal explorer available at: /missal/mass
 Latin Mass Church finder available at: /mass-finder
 
 To run:
