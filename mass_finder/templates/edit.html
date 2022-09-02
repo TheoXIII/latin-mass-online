@@ -1,0 +1,38 @@
+<h1>Edit Church</h1>
+
+<form action="deleterecord" method="post">
+    <input type="hidden" name="id" value="{{ id }}">
+    <input type="submit" value="Delete">
+</form>
+
+<form action="editrecord" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ id }}">
+    Church Name:<br>
+    <input name ="name" value="{{ name }}">
+    <br><br>
+    Location:<br>
+    <input name ="location" value="{{ location }}">
+    <br><br>
+    Address:<br>
+    <input name ="address" value="{{ address }}">
+    <br><br>
+    Website:<br>
+    <input name ="website" value= "{{ website }}">
+    <br><br>
+    Image link:<br>
+    <input name ="image" value="{{ image_url }}">
+    <br><br>
+    Low Mass:<br>
+    <input type="checkbox" name ="low" {% if low_mass %}checked{% endif %}>
+    <br><br>
+    Sung Mass:<br>
+    <input type="checkbox" name ="sung" {% if sung_mass %}checked{% endif %}>
+    <br><br>
+    High Mass:<br>
+    <input type="checkbox" name ="high" {% if high_mass %}checked{% endif %}>
+    <br><br>
+    Mass times:<br>
+    <textarea name="times" rows="10" cols="50">{{ mass_times }}</textarea>
+    <input type="submit" value="Submit">
+</form>

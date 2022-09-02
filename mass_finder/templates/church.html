@@ -1,0 +1,13 @@
+{% load markdown_extras %}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <img width="500px" height="100%" src="{{ info.image_url }}" alt="Image of {{ info.name }}"><br>
+    <span class="name">{{ info.name }}</span><br>
+    <span class="address">{{ info.address }}</span><br>
+    <span class="website"><a href="{{ info.website }}">Website</a></span><br>
+    <div class="times">{{ info.mass_times | markdown | safe }}</div>
+    <iframe src="{{ info.gmap }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

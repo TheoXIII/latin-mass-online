@@ -1,0 +1,32 @@
+<h1>Add Church</h1>
+
+<form action="addrecord" method="post">
+    {% csrf_token %}
+    Church Name:<br>
+    <input name ="name">
+    <br><br>
+    Location:<br>
+    <input name ="location">
+    <br><br>
+    Address:<br>
+    <input name ="address">
+    <br><br>
+    Website:<br>
+    <input name ="website">
+    <br><br>
+    Image link:<br>
+    <input name ="image">
+    <br><br>
+    Low Mass:<br>
+    <input type="checkbox" name ="low">
+    <br><br>
+    Sung Mass:<br>
+    <input type="checkbox" name ="sung">
+    <br><br>
+    High Mass:<br>
+    <input type="checkbox" name ="high">
+    <br><br>
+    Mass times:<br>
+    <textarea name="times" rows="10" cols="50"></textarea>
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+  </head>
+  <body>
+    <div class="ordo">
+      <!-- <button width="100" id="prev" onclick="window.location.href={{ prev_url }}">Previous</button>
+      <button width="100" id="next" onclick="window.location.href={{ next_url }}">Next</button> -->
+      
+      {% if grey_prev %}
+	<p class="button grey">Previous</p>
+      {% else %}
+	<a class="button" href="{{ prev_url }}">Previous</a>
+      {% endif %}
+      {% if grey_next %}
+	<p class="button grey">Next</p>
+      {% else %}
+	<a class="button" href="{{ next_url }}">Next</a>
+      {% endif %}
+    </div>
+    <div class="desc">
+      {% include description %}
+    </div>
+    <div class="img">
+      <img width=600 height=400 src = {% static image %}/>
+    </div>
+    <div class = "ordo">
+      <div class="latin">
+	{% include latin %}
+	<!-- <iframe width=500 height=400 src={% static latin %}></iframe> -->
+      </div>
+      <div class="english">
+	{% include english %}
+	<!-- <iframe id="coloured" width=500 height=400  src={% static english %}/></iframe> -->
+      </div>
+    </div>
+  </body>
+</html>

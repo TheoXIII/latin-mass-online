@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="" method="post">
+	{% csrf_token %}
+	<span class="search">Search<input name="term" value="{{ search }}"></span>
+	Low Mass <input type="checkbox" name="low" {% if low_mass %}checked{% endif %}>
+	Sung Mass <input type="checkbox" name="sung" {% if sung_mass %}checked{% endif %}>
+	High Mass <input type="checkbox" name="high" {% if high_mass %}checked{% endif %}>
+	<input type="submit" value="Search">
+    </form>
+
+    <table>
+	<tr>
+	    <th>Church Name</th>
+	    <th>Location</th>
+	    <th>Low Mass?</th>
+	    <th>Sung Mass?</th>
+	    <th>High Mass?</th>
+	</tr>
+	{% for church in churches %}
+	<tr>
+	    <td><a href="/mass-finder/church?id={{ church.id }}">{{ church.name }}</a></td>
+	    <td>{{ church.location }}</td>
+	    <td>{{ church.low_mass }}</td>
+	    <td>{{ church.sung_mass }}</td>
+	    <td>{{ church.high_mass }}</td>
+	</tr>
+	{% endfor %}
+    </table>
+
+</body>
+</html>
